@@ -16,13 +16,13 @@ public class SandwichApp {
         System.out.println("Enter r for regular size and l for large size");
         base = myScanner.next();
 
-        if (base.equalsIgnoreCase("r")){ //if they pick r it means regular
+        if (base.equalsIgnoreCase("r")) { //if they pick r it means regular
             System.out.println("You selected Regular size!");
             total = 5.45;
-        }else if (base.equalsIgnoreCase("l")){ //if l is picked then it is large
+        } else if (base.equalsIgnoreCase("l")) { //if l is picked then it is large
             System.out.println("You selected Large size!");
             total = 8.95;
-        }else{ //basic error handling. It ends the program if it receives invalid input.
+        } else { //basic error handling. It ends the program if it receives invalid input.
             System.out.println("Invalid option. You lost your opportunity to place an order");
             System.exit(1);
         }
@@ -34,9 +34,9 @@ public class SandwichApp {
         System.out.println("Type: True or False");
         loadedInput = myScanner.next(); // Read as a String to prevent crash
 
-        if (loadedInput.equalsIgnoreCase("true")){
+        if (loadedInput.equalsIgnoreCase("true")) {
             loaded = true;
-        } else if (loadedInput.equalsIgnoreCase("false")){
+        } else if (loadedInput.equalsIgnoreCase("false")) {
             loaded = false;
         } else {
             // Error handling for invalid input
@@ -45,12 +45,12 @@ public class SandwichApp {
             System.exit(1);
         }
 
-        if (loaded){
-            if (base.equalsIgnoreCase("r")){
+        if (loaded) {
+            if (base.equalsIgnoreCase("r")) {
                 System.out.println("Loaded regular sandwich will be $1 extra");
                 total += 1;
             }
-            if (base.equalsIgnoreCase("l")){
+            if (base.equalsIgnoreCase("l")) {
                 System.out.println("Loaded large sandwich will be $1.75 extra");
                 total += 1.75;
             }
@@ -59,15 +59,15 @@ public class SandwichApp {
         //applying age based discounts
         System.out.println("How old are you?");
         age = myScanner.nextInt();
-        if (age <= 17){
+        if (age <= 17) {
             System.out.println("Adding a 10% discount since you are under 18");
             total *= 0.9;
         }//I could have used if else here, but it reads and logically flows better with two if conditions vs if else
-        if (age >= 65){
+        if (age >= 65) {
             System.out.println("Adding a 20% discount since you are a senior");
             total *= 0.8;
         }
         System.out.println("Your total is: $" + total);
 
-        }
     }
+}
