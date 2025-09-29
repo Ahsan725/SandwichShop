@@ -16,10 +16,10 @@ public class SandwichApp {
         System.out.println("Enter r for regular size and l for large size");
         base = myScanner.next();
 
-        if (base.equalsIgnoreCase("r")){
+        if (base.equalsIgnoreCase("r")){ //if they pick r it means regular
             System.out.println("You selected Regular size!");
             total = 5.45;
-        }else if (base.equalsIgnoreCase("l")){
+        }else if (base.equalsIgnoreCase("l")){ //if l is picked then it is large
             System.out.println("You selected Large size!");
             total = 8.95;
         }else{ //basic error handling. It ends the program if it receives invalid input.
@@ -62,7 +62,7 @@ public class SandwichApp {
         if (age <= 17){
             System.out.println("Adding a 10% discount since you are under 18");
             total *= 0.9;
-        }//I could have used if else here but it reads and logically flows better with two if conditions vs if else
+        }//I could have used if else here, but it reads and logically flows better with two if conditions vs if else
         if (age >= 65){
             System.out.println("Adding a 20% discount since you are a senior");
             total *= 0.8;
