@@ -9,7 +9,7 @@ public class SandwichApp {
         double total = 0;
         Scanner myScanner = new Scanner(System.in);
         int age;
-        boolean loaded;
+        boolean loaded = false;
 
 
         System.out.println("Welcome to our Sandwich Shop! What would size base would you like?");
@@ -28,8 +28,22 @@ public class SandwichApp {
         }
 
         //checking if the customer would like a loaded sandwich?
-        System.out.println("Would you like a loaded sandwich? Type: True or False");
-        loaded = myScanner.nextBoolean();
+        String loadedInput; // Use a temporary String variable for input
+
+        System.out.println("Would you like a loaded sandwich?");
+        System.out.println("Type: True or False");
+        loadedInput = myScanner.next(); // Read as a String to prevent crash
+
+        if (loadedInput.equalsIgnoreCase("true")){
+            loaded = true;
+        } else if (loadedInput.equalsIgnoreCase("false")){
+            loaded = false;
+        } else {
+            // Error handling for invalid input
+            System.out.println("Invalid option for loaded sandwich. Order cancelled.");
+            myScanner.close();
+            System.exit(1);
+        }
 
         if (loaded){
             if (base.equalsIgnoreCase("r")){
