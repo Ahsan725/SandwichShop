@@ -29,6 +29,20 @@ public class SandwichApp {
             System.exit(1);
         }
 
+        //checking if the customer would like a loaded sandwich?
+        System.out.println("Would you like a loaded sandwich? Type: True or False");
+        loaded = myScanner.nextBoolean();
+
+        if (loaded){
+            if (base.equalsIgnoreCase("r")){
+                System.out.println("Loaded regular sandwich will be $1 extra");
+                total += 1;
+            }
+            if (base.equalsIgnoreCase("l")){
+                System.out.println("Loaded large sandwich will be $1.75 extra");
+                total += 1.75;
+            }
+        }
 
         //applying age based discounts
         System.out.println("How old are you?");
